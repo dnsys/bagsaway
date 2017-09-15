@@ -1,5 +1,63 @@
 {% extends "layouts/layout.njk" %}
 
 {% block content %}
-    CONTENT
+    <div class="wrapper">
+        <div class="container">
+            <div class="row">
+                {% set items = [
+                {
+                'itemClass': 'item-single',
+                'imageSrc': './images/old-red-sofa.jpg',
+                'itemId': '248',
+                'itemTitle': 'Old red sofa',
+                'itemCategory': 'Furniture, Chair, Home',
+                'itemPrice': '0.99'
+                },
+                {
+                'itemClass': 'item-single',
+                'imageSrc': './images/old-red-sofa.jpg',
+                'itemId': '248',
+                'itemTitle': 'Old red sofa',
+                'itemCategory': 'Furniture, Chair, Home',
+                'itemPrice': '0.99'
+                },
+                {
+                'itemClass': 'item-single',
+                'imageSrc': './images/old-red-sofa.jpg',
+                'itemId': '248',
+                'itemTitle': 'Old red sofa',
+                'itemCategory': 'Furniture, Chair, Home',
+                'itemPrice': '0.99'
+                },
+                {
+                'itemClass': 'item-single',
+                'imageSrc': './images/old-red-sofa.jpg',
+                'itemId': '248',
+                'itemTitle': 'Old red sofa',
+                'itemCategory': 'Furniture, Chair, Home',
+                'itemPrice': '0.99'
+                },
+                {
+                'itemClass': 'item-single',
+                'imageSrc': './images/old-red-sofa.jpg',
+                'itemId': '248',
+                'itemTitle': 'Old red sofa',
+                'itemCategory': 'Furniture, Chair, Home',
+                'itemPrice': '0.99'
+                },
+                {
+                'itemClass': 'item-single',
+                'imageSrc': './images/old-red-sofa.jpg',
+                'itemId': '248',
+                'itemTitle': 'Old red sofa',
+                'itemCategory': 'Furniture, Chair, Home',
+                'itemPrice': '0.99'
+                }
+                ] %}
+                {% for item in items %}
+                    {% include 'pages/storage/_item.njk' %}
+                {% endfor %}
+            </div>
+        </div>
+    </div>
 {% endblock %}

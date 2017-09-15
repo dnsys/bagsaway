@@ -1,0 +1,26 @@
+.base-button
+  display: inline-block
+  font-size: 14px
+  line-height: normal
+  text-decoration: none
+  padding: 15px 20px
+  border-radius: 3px
+  transition: .3s ease
+  &:hover
+    text-decoration: none
+  &:focus
+    text-decoration: none
+  &--with-border
+    color: #ffffff
+    border: 1px solid #ffffff
+    &:hover, &:focus
+      color: $color-base
+      background: #ffffff
+  &--filled
+    border: 1px solid transparent
+    background: #ffffff
+    color: $color-base
+    &:hover, &:focus
+      color: #ffffff
+      background: transparent
+      border-color: #ffffff

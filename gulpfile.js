@@ -235,7 +235,7 @@ gulp.task('watch', ['browserSync'], function() {
     // styles watcher
     gulp.watch(paths.styles.watch, ['watch:styles']);
     // scripts watcher
-    //gulp.watch(paths.scripts.watch, ['watch:scripts']);
+    gulp.watch(paths.scripts.watch, ['watch:scripts']);
     // images
     gulp.watch(paths.images.watch, ['watch:images']);
     // html

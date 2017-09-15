@@ -1,0 +1,59 @@
+.header-storage
+  background: $color-base
+  text-align: center
+  position: relative
+  &__element
+    display: inline-block
+  &__menu-nav
+    li
+      display: inline-block
+      padding: 0 20px
+  &__menu-nav-item
+    display: inline-block
+    position: relative
+    font-size: 16px
+    line-height: normal
+    color: #ffffff
+    text-decoration: none
+    padding: 35px 0
+    text-align: center
+    &:before
+      content: ''
+      position: absolute
+      display: block
+      bottom: 0
+      left: 0
+      width: 100%
+      height: 0
+      background: #7dc3ff
+      transition: height .3s ease
+    &:hover
+      color: #ffffff
+      text-decoration: none
+      &:before
+        height: 8px
+    &:focus
+      color: #ffffff
+      text-decoration: none
+    &--active
+      &:before
+        height: 8px
+  &__buttons-group
+    display: inline-block
+    position: absolute
+    top: 50%
+    right: 3%
+    transform: translateY(-50%)
+  &__request-button
+    margin-right: 5px
+  &__request-items-form
+    position: absolute
+    top: 0
+    right: 0
+    bottom: 0
+    left: 0
+    height: 100%
+    width: 100%
+    background: $color-base
+    transform: translateX(-100%)
+    transition: transform .3s ease
