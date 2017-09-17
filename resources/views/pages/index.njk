@@ -4,65 +4,69 @@
     <div class="wrapper">
         <div class="container">
             <div class="row">
-                {% set items = [
-                {
-                'dataId': '1',
-                'itemClass': 'item-single',
-                'imageSrc': './images/old-red-sofa.jpg',
-                'itemId': '248',
-                'itemTitle': 'Old red sofa',
-                'itemCategory': 'Furniture, Chair, Home',
-                'itemPrice': '0.99'
-                },
-                {
-                'dataId': '12',
-                'itemClass': 'item-boxes',
-                'imageSrc': './images/old-red-sofa.jpg',
-                'itemId': '248',
-                'itemTitle': 'Old red sofa',
-                'itemCategory': '2 oversize, 2 big, 3 small',
-                'itemPrice': '0.99'
-                },
-                {
-                'dataId': '2',
-                'itemClass': 'item-single',
-                'imageSrc': './images/old-red-sofa.jpg',
-                'itemId': '248',
-                'itemTitle': 'Old red sofa',
-                'itemCategory': 'Furniture, Chair, Home',
-                'itemPrice': '0.99'
-                },
-                {
-                'dataId': '3',
-                'itemClass': 'item-single',
-                'imageSrc': './images/old-red-sofa.jpg',
-                'itemId': '248',
-                'itemTitle': 'Old red sofa',
-                'itemCategory': 'Furniture, Chair, Home',
-                'itemPrice': '0.99'
-                },
-                {
-                'dataId': '4',
-                'itemClass': 'item-single',
-                'imageSrc': './images/old-red-sofa.jpg',
-                'itemId': '248',
-                'itemTitle': 'Old red sofa',
-                'itemCategory': 'Furniture, Chair, Home',
-                'itemPrice': '0.99'
-                },
-                {
-                'dataId': '5',
-                'itemClass': 'item-single',
-                'imageSrc': './images/old-red-sofa.jpg',
-                'itemId': '248',
-                'itemTitle': 'Old red sofa',
-                'itemCategory': 'Furniture, Chair, Home',
-                'itemPrice': '0.99'
-                }
-                ] %}
-                {% for item in items %}
-                    {% include 'pages/storage/_item.njk' %}
-                {% endfor %}
+                <div class="col-md-10 col-md-offset-1">
+                    <div class="row">
+                        {% set items = [
+                        {
+                        'dataId': '1',
+                        'itemClass': 'item-single',
+                        'imageSrc': './images/old-red-sofa.jpg',
+                        'itemId': '248',
+                        'itemTitle': 'Old red sofa',
+                        'itemCategory': 'Furniture, Chair, Home',
+                        'itemPrice': '0.99'
+                        },
+                        {
+                        'dataId': '12',
+                        'itemClass': 'item-boxes',
+                        'imageSrc': './images/old-red-sofa.jpg',
+                        'itemId': '248',
+                        'itemTitle': 'Old red sofa',
+                        'itemCategory': '2 oversize, 2 big, 3 small',
+                        'itemPrice': '0.99'
+                        },
+                        {
+                        'dataId': '2',
+                        'itemClass': 'item-single',
+                        'imageSrc': './images/old-red-sofa.jpg',
+                        'itemId': '248',
+                        'itemTitle': 'Old red sofa',
+                        'itemCategory': 'Furniture, Chair, Home',
+                        'itemPrice': '0.99'
+                        },
+                        {
+                        'dataId': '3',
+                        'itemClass': 'item-single',
+                        'imageSrc': './images/old-red-sofa.jpg',
+                        'itemId': '248',
+                        'itemTitle': 'Old red sofa',
+                        'itemCategory': 'Furniture, Chair, Home',
+                        'itemPrice': '0.99'
+                        },
+                        {
+                        'dataId': '4',
+                        'itemClass': 'item-single',
+                        'imageSrc': './images/old-red-sofa.jpg',
+                        'itemId': '248',
+                        'itemTitle': 'Old red sofa',
+                        'itemCategory': 'Furniture, Chair, Home',
+                        'itemPrice': '0.99'
+                        },
+                        {
+                        'dataId': '5',
+                        'itemClass': 'item-single',
+                        'imageSrc': './images/old-red-sofa.jpg',
+                        'itemId': '248',
+                        'itemTitle': 'Old red sofa',
+                        'itemCategory': 'Furniture, Chair, Home',
+                        'itemPrice': '0.99'
+                        }
+                        ] %}
+                        {% for item in items %}
+                            {% include 'pages/storage/_item.njk' %}
+                        {% endfor %}
+                    </div>
+                </div>
             </div>
         </div>
     </div>

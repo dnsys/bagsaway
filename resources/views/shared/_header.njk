@@ -14,9 +14,61 @@
     </div>
     <div class="header-storage__element header-storage__buttons-group">
         <a href="#" class="base-button base-button--with-border header-storage__request-button" id="requestItems">Request Items</a>
-        <a href="#" class="base-button base-button--filled">+ New Storage Order</a>
+        <a href="#" class="base-button base-button--filled" id="newStorageOrder">+ New Storage Order</a>
+        <a href="#" class="base-button base-button--with-border" id="requestItemsCancel">Cancel</a>
     </div>
-    <div class="header-storage__request-items-form">
-        <p>text</p>
+    <div class="header-storage__request-items-step" data-step="1">
+        <div class="header-storage__request-items-step-table">
+            <div class="header-storage__request-items-step-table-cell">
+                <div class="container">
+                    <div class="col-md-10 col-md-offset-1">
+                        <div class="header-storage__request-items-step-justify">
+                            <div class="header-storage__request-items-step-element">
+                                <div class="header-storage__request-items-step-title">
+                                    Request Items
+                                </div>
+                            </div>
+                            <div class="header-storage__request-items-step-element">
+                                <div class="header-storage__request-items-step-descr">
+                                    Choose items you want to request below
+                                </div>
+                            </div>
+                            <div class="header-storage__request-items-step-element">
+                                <div class="header-storage__request-items-step-button">
+                                    <a href="#" class="base-button base-button--filled" data-target="moveToNextStep">Next</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="header-storage__request-items-step" data-step="2">
+        <div class="header-storage__request-items-step-table">
+            <div class="header-storage__request-items-step-table-cell">
+                <div class="container">
+                    <div class="col-md-10 col-md-offset-1">
+                        <div class="header-storage__request-items-step-justify">
+                            <div class="header-storage__request-items-step-element">
+                                <div class="header-storage__request-items-step-title">
+                                    Request Items
+                                </div>
+                            </div>
+                            <div class="header-storage__request-items-step-element">
+                                <div class="header-storage__request-items-step-descr">
+                                    Fill in the form to finish your request
+                                </div>
+                            </div>
+                            <div class="header-storage__request-items-step-element">
+                                <div class="header-storage__request-items-step-button">
+                                    <a href="#" class="base-button base-button--filled">Done</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </div>

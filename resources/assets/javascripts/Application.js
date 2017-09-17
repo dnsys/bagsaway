@@ -16,13 +16,20 @@ class Application{
     }
 
     _toggleRequestItems(){
-        let $requestForm = $('.header-storage__request-items-form');
+        let $requestForm = $('.header-storage__request-items-step');
+        let $firstStep = $('.header-storage__request-items-step[data-step="1"]');
+        let $secondStep = $('.header-storage__request-items-step[data-step="2"]');
         let $items = $('.item-single');
         let $boxesItems = $('.storage-item.item-boxes');
         $('#requestItems').on('click', function (event) {
             event.preventDefault();
-            $requestForm.css({
-                'transform': 'translateX(0)'
+            let $this = $(this);
+            $this.hide();
+            $('#newStorageOrder').hide();
+            $('#requestItemsCancel').show();
+            $firstStep.css({
+                'transform': 'translateX(0)',
+                'z-index': '1'
             });
             $items.each(function () {
                 let $this = $(this);
@@ -35,7 +42,35 @@ class Application{
                     $this.addClass('storage-item--inactive');
                 });
             }
-        })
+        });
+        $('a[data-target="moveToNextStep"]').on('click', function (event) {
+            event.preventDefault();
+            $secondStep.css({
+                'transform': 'translateX(0)',
+                'z-index': '1'
+            });
+        });
+        $('#requestItemsCancel').on('click', function (event) {
+            event.preventDefault();
+            let $this = $(this);
+            $this.hide();
+            $('#newStorageOrder').show();
+            $('#requestItems').show();
+            $requestForm.css({
+                'transform': 'translateX(-100%)'
+            });
+            $items.each(function () {
+                let $this = $(this);
+                $this.find('.storage-item__action .storage-item__edit').show();
+                $this.find('.storage-item__action .storage-item__check').hide();
+            });
+            if($boxesItems.length){
+                $boxesItems.each(function () {
+                    let $this = $(this);
+                    $this.removeClass('storage-item--inactive');
+                });
+            }
+        });
     }
 
     _removeCategoryInItemEdit(){
@@ -47,22 +82,6 @@ class Application{
     }
 
     _addCategoryForm(){
-        // $('form').on('submit', function (event) {
-        //     event.preventDefault();
-        //     let $thisForm = $(this);
-        //     let url = $thisForm.attr('action');
-        //     let type = $thisForm.attr('method');
-        //     let formData = $thisForm.serialize();
-        //     $.ajax({
-        //         url: url,
-        //         type: type,
-        //         data: formData
-        //     }).done(data=>{
-        //         console.log('done');
-        //     }).fail(data=>{
-        //         console.log('fail');
-        //     });
-        // });
         $('.edit-items-block__add-category-add-button').on('click', function (event) {
             event.preventDefault();
             let $this = $(this);
