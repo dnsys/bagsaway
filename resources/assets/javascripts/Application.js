@@ -12,9 +12,9 @@ class Application{
     }
 
     _init(){
-        this._toggleRequestItems();
         this._removeCategoryInItemEdit();
         this._addCategoryForm();
+        this._toggleRequestItems();
         this._requestModalOptions();
         this._headerStepsCancel();
         this._dateTimePicker();
@@ -77,24 +77,23 @@ class Application{
     }
 
     _removeCategoryInItemEdit(){
-        $(document).on('click', '.edit-items-block__single-category-delete', function (event) {
+        $(document).on('click', '.request-modal__single-category-delete', function (event) {
+            //event.preventDefault();
             let $this = $(this);
-            event.preventDefault();
             $this.parent().fadeOut();
+            console.log('click remove');
         })
     }
 
     _addCategoryForm(){
-        $('form').on('submit', function (event) {
+        $('.request-modal__add-category-add-button').on('click', function (event) {
             event.preventDefault();
-        });
-        $('.edit-items-block__add-category-add-button').on('click', function (event) {
-            event.preventDefault();
+            console.log('click add');
             let $this = $(this);
-            let $categoriesContainer = $('.edit-items-block__categories-wrap');
+            let $categoriesContainer = $('.request-modal__categories-wrap');
             let $input = $this.parent().find('input[name="addCategoryItem"]')
             let $content = $input.val();
-            $('<span class="edit-items-block__single-category">' + $content + '<a href="#" class="edit-items-block__single-category-delete">' +
+            $('<span class="request-modal__single-category">' + $content + '<a href="#" class="request-modal__single-category-delete">' +
                 '<svg width="6px" height="6px" viewBox="0 0 6 6" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">' +
                 '<g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">' +
                 '<g id="Desc-Edit-Category" transform="translate(-627.000000, -444.000000)" fill="#0B7BFB">' +
