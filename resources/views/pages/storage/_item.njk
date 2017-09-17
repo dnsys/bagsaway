@@ -30,7 +30,7 @@
                     <input type="checkbox" id="item-check-{{ item.dataId }}">
                     <label for="item-check-{{ item.dataId }}"></label>
                 </div>
-                <button type="button" class="storage-item__edit">
+                <a href="#editSingleItem" type="button" class="storage-item__edit">
                     <svg width="23px" height="23px" viewBox="0 0 23 23" version="1.1" xmlns="http://www.w3.org/2000/svg"
                          xmlns:xlink="http://www.w3.org/1999/xlink">
                         <defs></defs>
@@ -43,7 +43,7 @@
                             </g>
                         </g>
                     </svg>
-                </button>
+                </a>
             </div>
             {% elif item.itemClass == 'item-boxes' %}
                 <div class="storage-item__action-boxes">

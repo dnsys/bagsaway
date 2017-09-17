@@ -1,118 +1,99 @@
-<div class="modal fade base-modal-window" id="editSingleItem" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    {#<div class="modal-dialog" role="document">#}
-    {#<div class="modal-content">#}
-    {#<div class="modal-header">#}
-    {#<h5 class="modal-title" id="exampleModalLabel">Modal title</h5>#}
-    {#<button type="button" class="close" data-dismiss="modal" aria-label="Close">#}
-    {#<span aria-hidden="true">&times;</span>#}
-    {#</button>#}
-    {#</div>#}
-    {#<div class="modal-body">#}
-    {#...#}
-    {#</div>#}
-    {#<div class="modal-footer">#}
-    {#<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>#}
-    {#<button type="button" class="btn btn-primary">Save changes</button>#}
-    {#</div>#}
-    {#</div>#}
-    {#</div>#}
-    <div class="base-modal-window__dialog base-modal-window__dialog--edit-item">
-        <div class="edit-items-block__info">
-            <div class="storage-item item-single storage-item--edit-modal">
-                <div class="storage-item__inner storage-item__inner--edit-modal">
-                    <div class="storage-item__element storage-item__image">
-                        <div class="storage-item__image-wrapper">
-                            <img src="./images/old-red-sofa.jpg" alt="">
-                        </div>
+<div class="mfp-hide base-modal-window__dialog base-modal-window__dialog--edit-item" id="editSingleItem">
+    <div class="edit-items-block__info">
+        <div class="storage-item item-single storage-item--edit-modal">
+            <div class="storage-item__inner storage-item__inner--edit-modal">
+                <div class="storage-item__element storage-item__image">
+                    <div class="storage-item__image-wrapper">
+                        <img src="./images/old-red-sofa.jpg" alt="">
                     </div>
-                    <div class="storage-item__element storage-item__info">
-                        <div class="storage-item__info-id">
-                            #248
-                        </div>
-                        <div class="storage-item__info-title">
-                            Old red sofa
-                        </div>
-                        <div class="storage-item__info-category">
-                            Furniture, Chair, Home
-                        </div>
-                        <div class="storage-item__info-price">
-                            $0.99
-                        </div>
+                </div>
+                <div class="storage-item__element storage-item__info">
+                    <div class="storage-item__info-id">
+                        #248
+                    </div>
+                    <div class="storage-item__info-title">
+                        Old red sofa
+                    </div>
+                    <div class="storage-item__info-category">
+                        Furniture, Chair, Home
+                    </div>
+                    <div class="storage-item__info-price">
+                        $0.99
                     </div>
                 </div>
             </div>
         </div>
-        <div class="edit-items-block__categories">
-            <div class="edit-items-block__small-title">
-                Current categories:
-            </div>
-            <div class="edit-items-block__categories-wrap">
-                <span class="edit-items-block__single-category">Furniture<a href="#" class="edit-items-block__single-category-delete">
-                        <svg width="6px" height="6px" viewBox="0 0 6 6" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-                            <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                                <g id="Desc-Edit-Category" transform="translate(-627.000000, -444.000000)" fill="#0B7BFB">
-                                    <g id="Form" transform="translate(437.000000, 210.000000)">
-                                        <g id="Current-categories" transform="translate(38.000000, 200.000000)">
-                                            <polygon id="close-[#1511]" points="155.4338 37 158 39.5662 157.5659 40 155 37.4338 152.4338 40 152 39.5662 154.5659 37 152 34.4338 152.4338 34 155 36.5662 157.5659 34 158 34.4338"></polygon>
-                                        </g>
-                                    </g>
-                                </g>
-                            </g>
-                        </svg>
-                    </a>
-                </span>
-                <span class="edit-items-block__single-category">Chair<a href="#" class="edit-items-block__single-category-delete">
-                        <svg width="6px" height="6px" viewBox="0 0 6 6" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-                            <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                                <g id="Desc-Edit-Category" transform="translate(-627.000000, -444.000000)" fill="#0B7BFB">
-                                    <g id="Form" transform="translate(437.000000, 210.000000)">
-                                        <g id="Current-categories" transform="translate(38.000000, 200.000000)">
-                                            <polygon id="close-[#1511]" points="155.4338 37 158 39.5662 157.5659 40 155 37.4338 152.4338 40 152 39.5662 154.5659 37 152 34.4338 152.4338 34 155 36.5662 157.5659 34 158 34.4338"></polygon>
-                                        </g>
-                                    </g>
-                                </g>
-                            </g>
-                        </svg>
-                    </a>
-                </span>
-                <span class="edit-items-block__single-category">Home<a href="#" class="edit-items-block__single-category-delete">
-                        <svg width="6px" height="6px" viewBox="0 0 6 6" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-                            <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                                <g id="Desc-Edit-Category" transform="translate(-627.000000, -444.000000)" fill="#0B7BFB">
-                                    <g id="Form" transform="translate(437.000000, 210.000000)">
-                                        <g id="Current-categories" transform="translate(38.000000, 200.000000)">
-                                            <polygon id="close-[#1511]" points="155.4338 37 158 39.5662 157.5659 40 155 37.4338 152.4338 40 152 39.5662 154.5659 37 152 34.4338 152.4338 34 155 36.5662 157.5659 34 158 34.4338"></polygon>
-                                        </g>
-                                    </g>
-                                </g>
-                            </g>
-                        </svg>
-                    </a>
-                </span>
-            </div>
+    </div>
+    <div class="edit-items-block__categories">
+        <div class="edit-items-block__small-title">
+            Current categories:
         </div>
-        <div class="edit-items-block__add-category">
-            <div class="edit-items-block__small-title">
-                Add category
-            </div>
-            <div class="edit-items-block__add-category-input">
-                <form action="/" method="post">
-                    <input type="text" name="addCategoryItem">
-                    <button type="submit" class="edit-items-block__add-category-add-button">
-                        <svg width="13px" height="13px" viewBox="0 0 13 13" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-                            <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                                <g id="Desc-Edit-Category" transform="translate(-778.000000, -531.000000)" fill="#0B7BFB">
-                                    <g id="Form" transform="translate(437.000000, 210.000000)">
-                                        <g id="Add-category" transform="translate(38.000000, 276.000000)">
-                                            <polygon id="plus-[#1512]" points="316 50.85 316 52.15 310.15 52.15 310.15 58 308.85 58 308.85 52.15 303 52.15 303 50.85 308.85 50.85 308.85 45 310.15 45 310.15 50.85"></polygon>
-                                        </g>
+        <div class="edit-items-block__categories-wrap">
+            <span class="edit-items-block__single-category">Furniture<a href="#" class="edit-items-block__single-category-delete">
+                    <svg width="6px" height="6px" viewBox="0 0 6 6" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                        <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                            <g id="Desc-Edit-Category" transform="translate(-627.000000, -444.000000)" fill="#0B7BFB">
+                                <g id="Form" transform="translate(437.000000, 210.000000)">
+                                    <g id="Current-categories" transform="translate(38.000000, 200.000000)">
+                                        <polygon id="close-[#1511]" points="155.4338 37 158 39.5662 157.5659 40 155 37.4338 152.4338 40 152 39.5662 154.5659 37 152 34.4338 152.4338 34 155 36.5662 157.5659 34 158 34.4338"></polygon>
                                     </g>
                                 </g>
                             </g>
-                        </svg>
-                    </button>
-                </form>
-            </div>
+                        </g>
+                    </svg>
+                </a>
+            </span>
+            <span class="edit-items-block__single-category">Chair<a href="#" class="edit-items-block__single-category-delete">
+                    <svg width="6px" height="6px" viewBox="0 0 6 6" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                        <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                            <g id="Desc-Edit-Category" transform="translate(-627.000000, -444.000000)" fill="#0B7BFB">
+                                <g id="Form" transform="translate(437.000000, 210.000000)">
+                                    <g id="Current-categories" transform="translate(38.000000, 200.000000)">
+                                        <polygon id="close-[#1511]" points="155.4338 37 158 39.5662 157.5659 40 155 37.4338 152.4338 40 152 39.5662 154.5659 37 152 34.4338 152.4338 34 155 36.5662 157.5659 34 158 34.4338"></polygon>
+                                    </g>
+                                </g>
+                            </g>
+                        </g>
+                    </svg>
+                </a>
+            </span>
+            <span class="edit-items-block__single-category">Home<a href="#" class="edit-items-block__single-category-delete">
+                    <svg width="6px" height="6px" viewBox="0 0 6 6" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                        <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                            <g id="Desc-Edit-Category" transform="translate(-627.000000, -444.000000)" fill="#0B7BFB">
+                                <g id="Form" transform="translate(437.000000, 210.000000)">
+                                    <g id="Current-categories" transform="translate(38.000000, 200.000000)">
+                                        <polygon id="close-[#1511]" points="155.4338 37 158 39.5662 157.5659 40 155 37.4338 152.4338 40 152 39.5662 154.5659 37 152 34.4338 152.4338 34 155 36.5662 157.5659 34 158 34.4338"></polygon>
+                                    </g>
+                                </g>
+                            </g>
+                        </g>
+                    </svg>
+                </a>
+            </span>
+        </div>
+    </div>
+    <div class="edit-items-block__add-category">
+        <div class="edit-items-block__small-title">
+            Add category
+        </div>
+        <div class="edit-items-block__add-category-input">
+            <form action="/" method="post">
+                <input type="text" name="addCategoryItem">
+                <button type="submit" class="edit-items-block__add-category-add-button">
+                    <svg width="13px" height="13px" viewBox="0 0 13 13" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                        <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                            <g id="Desc-Edit-Category" transform="translate(-778.000000, -531.000000)" fill="#0B7BFB">
+                                <g id="Form" transform="translate(437.000000, 210.000000)">
+                                    <g id="Add-category" transform="translate(38.000000, 276.000000)">
+                                        <polygon id="plus-[#1512]" points="316 50.85 316 52.15 310.15 52.15 310.15 58 308.85 58 308.85 52.15 303 52.15 303 50.85 308.85 50.85 308.85 45 310.15 45 310.15 50.85"></polygon>
+                                    </g>
+                                </g>
+                            </g>
+                        </g>
+                    </svg>
+                </button>
+            </form>
         </div>
     </div>
 </div>
