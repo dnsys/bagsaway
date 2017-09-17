@@ -18,6 +18,7 @@ class Application{
     _toggleRequestItems(){
         let $requestForm = $('.header-storage__request-items-form');
         let $items = $('.item-single');
+        let $boxesItems = $('.storage-item.item-boxes');
         $('#requestItems').on('click', function (event) {
             event.preventDefault();
             $requestForm.css({
@@ -27,7 +28,13 @@ class Application{
                 let $this = $(this);
                 $this.find('.storage-item__action .storage-item__edit').hide();
                 $this.find('.storage-item__action .storage-item__check').show();
-            })
+            });
+            if($boxesItems.length){
+                $boxesItems.each(function () {
+                    let $this = $(this);
+                    $this.addClass('storage-item--inactive');
+                });
+            }
         })
     }
 
