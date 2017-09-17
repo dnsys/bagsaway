@@ -18,10 +18,9 @@
 <body>
 {% include "shared/_header.njk" %}
 
-<main>
+
     {% block content %}{% endblock %}
-</main>
-{% include 'shared/_modal-edit-item.njk' %}
+
 {% include "shared/_footer.njk" %}
 </body>
 <script type="text/javascript" src="./js/application.js?{{ timestamp }}"></script>

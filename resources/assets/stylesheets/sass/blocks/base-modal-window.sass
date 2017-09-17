@@ -1,5 +1,6 @@
 .base-modal-window
   background-color: rgba(8, 30, 58, 0.73)
+  position: absolute
   &__vertical-helper
     display: table
     height: 100%
@@ -10,11 +11,16 @@
     vertical-align: middle
     pointer-events: none
   &__dialog
+    position: relative
     background: #ffffff
     border-radius: 6px
     padding: 40px 40px
     pointer-events: all
-    margin: 0 auto
+    margin: 50px auto
     &--edit-item
       max-width: 480px
       width: 100%
+  &__dialog-close
+    position: absolute
+    top: 20px
+    right: 20px

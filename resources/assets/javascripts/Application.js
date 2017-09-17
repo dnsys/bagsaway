@@ -13,10 +13,11 @@ class Application{
         this._toggleRequestItems();
         this._removeCategoryInItemEdit();
         this._addCategoryForm();
+        this._requestModalOptions();
+        this._headerStepsCancel();
     }
 
     _toggleRequestItems(){
-        let $requestForm = $('.header-storage__request-items-step');
         let $firstStep = $('.header-storage__request-items-step[data-step="1"]');
         let $secondStep = $('.header-storage__request-items-step[data-step="2"]');
         let $items = $('.item-single');
@@ -50,27 +51,6 @@ class Application{
                 'z-index': '1'
             });
         });
-        $('#requestItemsCancel').on('click', function (event) {
-            event.preventDefault();
-            let $this = $(this);
-            $this.hide();
-            $('#newStorageOrder').show();
-            $('#requestItems').show();
-            $requestForm.css({
-                'transform': 'translateX(-100%)'
-            });
-            $items.each(function () {
-                let $this = $(this);
-                $this.find('.storage-item__action .storage-item__edit').show();
-                $this.find('.storage-item__action .storage-item__check').hide();
-            });
-            if($boxesItems.length){
-                $boxesItems.each(function () {
-                    let $this = $(this);
-                    $this.removeClass('storage-item--inactive');
-                });
-            }
-        });
     }
 
     _removeCategoryInItemEdit(){
@@ -97,6 +77,52 @@ class Application{
                 '<polygon id="close-[#1511]" points="155.4338 37 158 39.5662 157.5659 40 155 37.4338 152.4338 40 152 39.5662 154.5659 37 152 34.4338 152.4338 34 155 36.5662 157.5659 34 158 34.4338"></polygon>' +
                 '</g></g></g></g></svg></a></span>').appendTo($categoriesContainer).hide().fadeIn();
             $input.val('');
+        });
+    }
+
+    _requestModalOptions(){
+        let $editHeader = $('.header-storage__request-items-step[data-target="editItem"]');
+        $('.storage-item__edit').on('click', function () {
+            $('#newStorageOrder').hide();
+            $('#requestItems').hide();
+            $('#requestItemsCancel').show();
+            $editHeader.css({
+                'transform': 'translateX(0)',
+                'z-index': '1'
+            });
+            // $('#editSingleItem').modal({
+            //     backdrop: false,
+            //     keyboard: false
+            // });
+        });
+    }
+
+    _headerStepsCancel(){
+        let $requestForm = $('.header-storage__request-items-step');
+        let $items = $('.item-single');
+        let $boxesItems = $('.storage-item.item-boxes');
+        $('#requestItemsCancel').on('click', function (event) {
+            event.preventDefault();
+            let $this = $(this);
+            console.log($this);
+            $this.hide();
+            $('#newStorageOrder').show();
+            $('#requestItems').show();
+            $requestForm.css({
+                'transform': 'translateX(-100%)'
+            });
+            $items.each(function () {
+                let $this = $(this);
+                $this.find('.storage-item__action .storage-item__edit').show();
+                $this.find('.storage-item__action .storage-item__check').hide();
+            });
+            if($boxesItems.length){
+                $boxesItems.each(function () {
+                    let $this = $(this);
+                    $this.removeClass('storage-item--inactive');
+                });
+            }
+            // $('#editSingleItem').modal('hide');
         });
     }
 }
