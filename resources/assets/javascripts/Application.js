@@ -85,6 +85,9 @@ class Application{
     }
 
     _addCategoryForm(){
+        $('form').on('submit', function (event) {
+            event.preventDefault();
+        });
         $('.edit-items-block__add-category-add-button').on('click', function (event) {
             event.preventDefault();
             let $this = $(this);
