@@ -3,6 +3,7 @@ window.jQuery = $;
 window.$ = $;
 //require('bootstrap');
 import magnificPopup from 'magnific-popup';
+import datetimepicker from 'eonasdan-bootstrap-datetimepicker';
 
 class Application{
     constructor(){
@@ -16,6 +17,7 @@ class Application{
         this._addCategoryForm();
         this._requestModalOptions();
         this._headerStepsCancel();
+        this._dateTimePicker();
     }
 
     _toggleRequestItems(){
@@ -53,7 +55,7 @@ class Application{
             });
             $.magnificPopup.open({
                 items: {
-                    src: '#editSingleItem',
+                    src: '#requestItemsModal',
                 },
                 type: 'inline',
                 preloader: false,
@@ -160,6 +162,10 @@ class Application{
             }
             $.magnificPopup.close();
         });
+    }
+
+    _dateTimePicker(){
+        $('#datetimepicker1').datetimepicker();
     }
 }
 

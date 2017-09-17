@@ -30,6 +30,7 @@
     "babelify": "^7.3.0",
     "bootstrap": "^3.3.7",
     "browserify": "^14.4.0",
+    "eonasdan-bootstrap-datetimepicker": "^4.17.47",
     "gulp-if": "^2.0.2",
     "gulp-nunjucks-render": "^2.0.0",
     "gulp-rev": "^7.1.2",
