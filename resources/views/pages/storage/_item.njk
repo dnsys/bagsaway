@@ -30,7 +30,7 @@
                     <input type="checkbox" id="item-check-{{ item.dataId }}">
                     <label for="item-check-{{ item.dataId }}"></label>
                 </div>
-                <a href="#editSingleItem" type="button" class="storage-item__edit">
+                <a href="#requestItemsModal" data-id="editItemCategory" class="storage-item__edit storage-item__action-type">
                     <svg width="23px" height="23px" viewBox="0 0 23 23" version="1.1" xmlns="http://www.w3.org/2000/svg"
                          xmlns:xlink="http://www.w3.org/1999/xlink">
                         <defs></defs>
@@ -47,7 +47,7 @@
             </div>
             {% elif item.itemClass == 'item-boxes' %}
                 <div class="storage-item__action-boxes">
-                    <a href="#" class="storage-item__boxes-request"><span>Request</span></a>
+                    <a href="#requestItemsModal" data-id="requestBoxes" class="storage-item__boxes-request storage-item__action-type"><span>Request</span></a>
                 </div>
             {% endif %}
         </div>

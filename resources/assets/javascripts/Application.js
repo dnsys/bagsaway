@@ -1,7 +1,7 @@
 import $ from 'jquery';
 window.jQuery = $;
 window.$ = $;
-//require('bootstrap');
+require('jquery-nice-select');
 import magnificPopup from 'magnific-popup';
 import datetimepicker from 'eonasdan-bootstrap-datetimepicker';
 
@@ -18,6 +18,7 @@ class Application{
         this._requestModalOptions();
         this._headerStepsCancel();
         this._dateTimePicker();
+        this._selectInit();
     }
 
     _toggleRequestItems(){
@@ -103,9 +104,10 @@ class Application{
     }
 
     _requestModalOptions(){
-        let $editHeader = $('.header-storage__request-items-step[data-target="editItem"]');
-        $('.storage-item__edit').on('click', function () {
+        $('.storage-item__action-type').on('click', function () {
             let $this = $(this);
+            let $buttonTarget = $this.data('id');
+            let $editHeader = $('.header-storage__request-items-step[data-target="' + $buttonTarget + '"]');
             $('#newStorageOrder').hide();
             $('#requestItems').hide();
             $('#requestItemsCancel').show();
@@ -115,7 +117,7 @@ class Application{
             });
             $.magnificPopup.open({
                 items: {
-                    src: '#editSingleItem',
+                    src: '#'+$buttonTarget,
                 },
                 type: 'inline',
                 preloader: false,
@@ -166,6 +168,10 @@ class Application{
 
     _dateTimePicker(){
         $('#datetimepicker1').datetimepicker();
+    }
+
+    _selectInit(){
+        $('select').niceSelect();
     }
 }
 
