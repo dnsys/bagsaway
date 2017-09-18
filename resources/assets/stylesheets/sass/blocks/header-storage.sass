@@ -4,12 +4,17 @@
   position: relative
   display: table
   width: 100%
+  min-height: 60px
+  +media-1280
+    text-align: left
   &__element
     display: inline-block
   &__menu-nav
     li
       display: inline-block
       padding: 0 20px
+    +media-910
+      display: none
   &__menu-nav-item
     display: inline-block
     position: relative
@@ -47,6 +52,9 @@
     right: 3%
     transform: translateY(-50%)
     z-index: 99
+    &--desktop
+      +media-910
+        display: none
   &__request-button
     margin-right: 5px
   &__request-items-step
