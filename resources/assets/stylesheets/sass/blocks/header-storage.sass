@@ -52,11 +52,18 @@
     right: 3%
     transform: translateY(-50%)
     z-index: 99
+    //&--desktop
+    //  +media-910
+    //    display: none
+  &__request-button
+    margin-right: 5px
     &--desktop
       +media-910
         display: none
-  &__request-button
-    margin-right: 5px
+  &__storage-order-button
+    &--desktop
+      +media-910
+        display: none
   &__request-items-step
     position: absolute
     top: 0

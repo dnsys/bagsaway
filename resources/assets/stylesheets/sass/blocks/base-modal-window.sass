@@ -5,6 +5,7 @@
   right: 0
   bottom: 0
   left: 0
+  overflow: auto
   &__vertical-helper
     display: table
     height: 100%
@@ -52,3 +53,6 @@
 /* content animate out */
 .mfp-fade.mfp-wrap.mfp-removing .mfp-content
   opacity: 0
+
+body.modal-opened
+  overflow: hidden

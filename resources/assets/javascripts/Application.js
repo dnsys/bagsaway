@@ -26,7 +26,7 @@ class Application{
         let $secondStep = $('.header-storage__request-items-step[data-step="2"]');
         let $items = $('.item-single');
         let $boxesItems = $('.storage-item.item-boxes');
-        $('#requestItems').on('click', function (event) {
+        $('.header-storage__request-button').on('click', function (event) {
             event.preventDefault();
             let $this = $(this);
             $this.hide();
@@ -67,7 +67,15 @@ class Application{
                 autoFocusLast: false,
                 alignTop: true,
                 showCloseBtn: false,
-                closeOnBgClick: false
+                closeOnBgClick: false,
+                callbacks: {
+                    open: function () {
+                        $('body').addClass('modal-opened');
+                    },
+                    close: function () {
+                        $('body').removeClass('modal-opened');
+                    }
+                }
             });
             $("html, body").animate({
                 scrollTop: 0
@@ -130,7 +138,15 @@ class Application{
                 autoFocusLast: false,
                 alignTop: true,
                 showCloseBtn: false,
-                closeOnBgClick: false
+                closeOnBgClick: false,
+                callbacks: {
+                    open: function () {
+                        $('body').addClass('modal-opened');
+                    },
+                    close: function () {
+                        $('body').removeClass('modal-opened');
+                    }
+                }
             });
             $("html, body").animate({
                 scrollTop: 0
