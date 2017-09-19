@@ -15,10 +15,33 @@ class Application{
         this._removeCategoryInItemEdit();
         this._addCategoryForm();
         this._toggleRequestItems();
-        this._requestModalOptions();
+        this._requestItemsButton();
         this._headerStepsCancel();
         this._dateTimePicker();
         this._selectInit();
+    }
+
+    _requestItemsButton(){
+        $('.storage-item__action-type').on('click', function(event){
+            event.preventDefault();
+            let $this = $(this);
+            let $buttonTarget = $this.data('id');
+            console.log($buttonTarget);
+            let $editHeader = $('.header-storage__request-items-step[data-target="' + $buttonTarget + '"]');
+            $('.js-cancel-button').addClass('header-storage__cancel-button--active');
+            $editHeader.css({
+                'transform': 'translateX(0)',
+                'z-index': '1'
+            });
+            showModal($buttonTarget);
+            $("html, body").animate({
+                scrollTop: 0
+            }, 600);
+            return false;
+        });
+        let showModal = elementID => {
+            this._showModal(elementID);
+        }
     }
 
     _toggleRequestItems(){
@@ -26,12 +49,10 @@ class Application{
         let $secondStep = $('.header-storage__request-items-step[data-step="2"]');
         let $items = $('.item-single');
         let $boxesItems = $('.storage-item.item-boxes');
-        $('.header-storage__request-button').on('click', function (event) {
+        $('#requestItems').on('click', function (event) {
             event.preventDefault();
             let $this = $(this);
-            $this.hide();
-            $('#newStorageOrder').hide();
-            $('#requestItemsCancel').show();
+            $('.js-cancel-button').addClass('header-storage__cancel-button--active');
             $firstStep.css({
                 'transform': 'translateX(0)',
                 'z-index': '1'
@@ -48,35 +69,13 @@ class Application{
                 });
             }
         });
-        $('a[data-target="moveToNextStep"]').on('click', function (event) {
+        $('a[data-target="moveToNextStep"]').on('click', event => {
             event.preventDefault();
             $secondStep.css({
                 'transform': 'translateX(0)',
                 'z-index': '1'
             });
-            $.magnificPopup.open({
-                items: {
-                    src: '#requestItemsModal',
-                },
-                type: 'inline',
-                preloader: false,
-                mainClass: 'base-modal-window mfp-fade',
-                fixedContentPos: false,
-                //fixedBgPos: false,
-                prependTo: '.wrapper__content',
-                autoFocusLast: false,
-                alignTop: true,
-                showCloseBtn: false,
-                closeOnBgClick: false,
-                callbacks: {
-                    open: function () {
-                        $('body').addClass('modal-opened');
-                    },
-                    close: function () {
-                        $('body').removeClass('modal-opened');
-                    }
-                }
-            });
+            this._showModal('requestItemsModal');
             $("html, body").animate({
                 scrollTop: 0
             }, 600);
@@ -113,59 +112,15 @@ class Application{
         });
     }
 
-    _requestModalOptions(){
-        $('.storage-item__action-type').on('click', function () {
-            let $this = $(this);
-            let $buttonTarget = $this.data('id');
-            let $editHeader = $('.header-storage__request-items-step[data-target="' + $buttonTarget + '"]');
-            $('#newStorageOrder').hide();
-            $('#requestItems').hide();
-            $('#requestItemsCancel').show();
-            $editHeader.css({
-                'transform': 'translateX(0)',
-                'z-index': '1'
-            });
-            $.magnificPopup.open({
-                items: {
-                    src: '#'+$buttonTarget,
-                },
-                type: 'inline',
-                preloader: false,
-                mainClass: 'base-modal-window mfp-fade',
-                fixedContentPos: false,
-                //fixedBgPos: false,
-                prependTo: '.wrapper__content',
-                autoFocusLast: false,
-                alignTop: true,
-                showCloseBtn: false,
-                closeOnBgClick: false,
-                callbacks: {
-                    open: function () {
-                        $('body').addClass('modal-opened');
-                    },
-                    close: function () {
-                        $('body').removeClass('modal-opened');
-                    }
-                }
-            });
-            $("html, body").animate({
-                scrollTop: 0
-            }, 600);
-            return false;
-        });
-    }
-
     _headerStepsCancel(){
         let $requestForm = $('.header-storage__request-items-step');
         let $items = $('.item-single');
         let $boxesItems = $('.storage-item.item-boxes');
-        $('#requestItemsCancel').on('click', function (event) {
+        $('.js-cancel-button').on('click', function (event) {
             event.preventDefault();
             let $this = $(this);
             console.log($this);
-            $this.hide();
-            $('#newStorageOrder').show();
-            $('#requestItems').show();
+            $this.removeClass('header-storage__cancel-button--active');
             $requestForm.css({
                 'transform': 'translateX(-100%)'
             });
@@ -190,6 +145,32 @@ class Application{
 
     _selectInit(){
         $('select').niceSelect();
+    }
+
+    _showModal(modalId){
+        console.log(modalId);
+        $.magnificPopup.open({
+            items: {
+                src: '#' + modalId,
+            },
+            type: 'inline',
+            preloader: false,
+            mainClass: 'base-modal-window mfp-fade',
+            autoFocusLast: false,
+            // fixedContentPos: false,
+            // prependTo: '.wrapper__content',
+            alignTop: true,
+            showCloseBtn: false,
+            closeOnBgClick: false,
+            callbacks: {
+                open: function () {
+                    $('body').addClass('modal-opened');
+                },
+                close: function () {
+                    $('body').removeClass('modal-opened');
+                }
+            }
+        });
     }
 }
 

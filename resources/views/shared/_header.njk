@@ -1,6 +1,6 @@
 <div class="header-storage">
     <div class="header-storage__element header-storage__menu">
-        <ul class="header-storage__menu-nav">
+        <ul class="header-storage__menu-nav header-storage__menu-nav--desktop">
             <li>
                 <a href="#" class="header-storage__menu-nav-item">Luggage Storage <span class="header-storage__menu-nav-item-count">(9)</span></a>
             </li>
@@ -11,12 +11,15 @@
                 <a href="#" class="header-storage__menu-nav-item">Item Requests <span class="header-storage__menu-nav-item-count">(9)</span></a>
             </li>
         </ul>
+        <div class="header-storage__menu-nav header-storage__menu-nav--mobile">
+            <span class="header-storage__menu-nav-link">Storage items <span class="header-storage__menu-nav-item-count">(9)</span></span>
+        </div>
     </div>
-    <div class="header-storage__element header-storage__buttons-group header-storage__buttons-group--desktop">
-        <div class="base-button base-button--with-border header-storage__request-button header-storage__request-button--desktop header-storage__button" id="requestItems">Request Items</div>
-        <div class="base-button base-button--filled header-storage__storage-order-button header-storage__storage-order-button--desktop header-storage__button" id="newStorageOrder">+ New Storage Order</div>
-        <div class="base-button base-button--with-border" id="requestItemsCancel">Cancel</div>
+    <div class="header-storage__element header-storage__buttons-group">
+        <div class="base-button base-button--with-border" id="requestItems">Request Items</div>
+        <a href="#" class="base-button base-button--filled header-storage__storage-order-button header-storage__storage-order-button--desktop">+ New Storage Order</a>
     </div>
+    <div class="header-storage__cancel-button js-cancel-button">Cancel</div>
     <div class="header-storage__request-items-step" data-target="editItemCategory">
         <div class="header-storage__request-items-step-table">
             <div class="header-storage__request-items-step-table-cell">

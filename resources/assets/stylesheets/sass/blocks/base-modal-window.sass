@@ -1,11 +1,11 @@
 .base-modal-window
   background-color: rgba(8, 30, 58, 0.73)
-  height: 100%!important
-  top: 0 !important
-  right: 0
+  top: 86px !important
   bottom: 0
-  left: 0
+  height: auto !important
   overflow: auto
+  +media-910
+    top: 60px !important
   &__vertical-helper
     display: table
     height: 100%
@@ -25,6 +25,7 @@
     +media-480
       margin: 0
       border-radius: 0
+      padding: 20px 20px
     &--edit-item
       max-width: 480px
       width: 100%

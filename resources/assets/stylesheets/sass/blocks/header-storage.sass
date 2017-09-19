@@ -9,12 +9,20 @@
     text-align: left
   &__element
     display: inline-block
+  &__menu
+    +media-910
+      line-height: 60px
   &__menu-nav
     li
       display: inline-block
       padding: 0 20px
-    +media-910
+    &--desktop
+      +media-910
+        display: none
+    &--mobile
       display: none
+      +media-910
+        display: inline-block
   &__menu-nav-item
     display: inline-block
     position: relative
@@ -51,19 +59,51 @@
     top: 50%
     right: 3%
     transform: translateY(-50%)
-    z-index: 99
+    +media-640
+      right: 5%
+    //z-index: 99
     //&--desktop
     //  +media-910
     //    display: none
   &__request-button
+    display: inline-block
     margin-right: 5px
-    &--desktop
-      +media-910
-        display: none
+    font-family: $font-maison-nue-bold
+    font-size: 14px
+    line-height: normal
+    text-decoration: none
+    padding: 15px 20px
+    border-radius: 3px
+    transition: .3s ease
+    background: 0 0
+    cursor: pointer
+    color: #fff
+    border: 1px solid #fff
+    +media-640
+      font-family: $font-family-base
+      border: none
+      padding: 0
+  &__step-button
+    +media-640
+      border: 0
+      padding: 0
+      background: 0
   &__storage-order-button
     &--desktop
-      +media-910
-        display: none
+      +media-640
+        display: none !important
+    &--mobile
+      display: none
+      width: 100%
+      padding: 20px 20px
+      text-align: center
+      border: 1px solid $color-base
+      border-radius: 12px
+      color: $color-base
+      +media-640
+        display: inline-block
+
+
   &__request-items-step
     position: absolute
     top: 0
@@ -81,6 +121,8 @@
     line-height: 0
     text-justify: newspaper
     zoom: 1
+    +media-640
+      text-align: center
     &:after
       width: 100%
       height: 0
@@ -96,10 +138,21 @@
     color: #ffffff
     font-size: 18px
     line-height: normal
+    +media-640
+      font-family: $font-family-base
+      font-size: 16px
   &__request-items-step-descr
     color: #ffffff
     font-size: 18px
     line-height: normal
+    +media-992
+      display: none
+  &__request-items-step-button
+    +media-640
+      position: absolute
+      right: 5%
+      top: 50%
+      transform: translateY(-50%)
   &__request-items-step-table
     display: table
     height: 100%
@@ -107,5 +160,30 @@
   &__request-items-step-table-cell
     display: table-cell
     vertical-align: middle
-  #requestItemsCancel
+  &__cancel-button
     display: none
+    font-family: $font-maison-nue-bold
+    font-size: 14px
+    line-height: normal
+    text-decoration: none
+    padding: 15px 20px
+    border-radius: 3px
+    transition: .3s ease
+    background: 0 0
+    cursor: pointer
+    color: #fff
+    border: 1px solid #fff
+    position: absolute
+    top: 50%
+    right: 3%
+    transform: translateY(-50%)
+    z-index: 99
+    +media-930
+      left: 5%
+      right: auto
+    +media-640
+      border: none
+      font-family: $font-family-base
+      padding: 0
+    &--active
+      display: inline-block

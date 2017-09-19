@@ -9,6 +9,9 @@
   transition: .3s ease
   background: transparent
   cursor: pointer
+  +media-640
+    font-family: $font-family-base
+    padding: 0
   &:hover
     text-decoration: none
   &:focus
@@ -16,14 +19,28 @@
   &--with-border
     color: #ffffff
     border: 1px solid #ffffff
+    +media-640
+      border: 0
     &:hover, &:focus
       color: $color-base
       background: #ffffff
+      +media-640
+        background: 0
+        border: 0
+        color: #ffffff
   &--filled
     border: 1px solid transparent
     background: #ffffff
     color: $color-base
+    +media-640
+      background: 0
+      border: 0
+      color: #ffffff
     &:hover, &:focus
       color: #ffffff
       background: transparent
       border-color: #ffffff
+      +media-640
+        background: 0
+        border: 0
+        color: #ffffff

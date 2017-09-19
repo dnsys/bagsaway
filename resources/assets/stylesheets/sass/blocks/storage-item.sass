@@ -4,6 +4,8 @@
   transition: background .3s ease
   &:hover
     background: rgba(46, 129, 230, .1)
+  +media-380
+    padding: 0
   &__inner
     border-bottom: 1px solid #f7f7f7
     padding: 20px 0
@@ -23,6 +25,9 @@
     +media-480
       width: 115px
       height: 115px
+    +media-380
+      width: 100px
+      height: 100px
   &__image-wrapper
     overflow: hidden
     height: 100%
@@ -61,6 +66,8 @@
     right: 15px
     top: 50%
     transform: translateY(-50%)
+    +media-380
+      right: 0
   &__check
     display: none
   &__edit
@@ -79,21 +86,32 @@
     padding: 0
     &:hover
       background: none
+  &__status
+    position: absolute
+    right: 20px
+    bottom: 33px
+    color: #f17a75
+    +media-480
+      font-size: 14px
   &__action-boxes
     position: absolute
     right: 20px
     top: 20px
+    +media-380
+      right: 0
   &__boxes-request
     position: relative
     display: inline-block
     padding: 8px 15px
-    border: 1px solid $color-base
+    border: 1px solid $color-light-blue
     border-radius: 8px
     text-decoration: none
-    color: $color-base
+    color: $color-light-blue
     transition: .3s ease
     overflow: hidden
     z-index: 1
+    +media-480
+      font-size: 14px
     &:before
       content: ''
       display: block
