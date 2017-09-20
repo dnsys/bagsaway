@@ -23,6 +23,50 @@
       display: none
       +media-910
         display: inline-block
+  &__menu-mobile
+    margin-left: 25px
+    color: #ffffff
+    &:after
+      content: ''
+      display: inline-block
+      vertical-align: middle
+      border: solid #ffffff
+      border-width: 0 1px 1px 0
+      padding: 3px
+      transform: rotate(45deg)
+      margin-left: 5px
+      transition: transform .3s ease
+    &--opened
+      &:after
+        transform: rotate(-135deg)
+    span
+      display: inline-block
+  &__menu-mobile-list
+    display: none
+    position: fixed
+    top: 60px
+    right: 0
+    bottom: 0
+    left: 0
+    height: auto
+    overflow: auto
+    z-index: 99
+    -webkit-backdrop-filter: blur(0.5px)
+    backdrop-filter: blur(0.5px)
+    background-color: rgba(8, 30, 58, 0.73)
+    li
+      width: 100%
+      padding: 10% 0
+      text-align: center
+      line-height: normal
+      a
+        display: inline-block
+        width: 200px
+        height: 200px
+        border: 2px solid #5da9ff
+        border-radius: 6px
+        padding: 15px
+        color: #ffffff
   &__menu-nav-item
     display: inline-block
     position: relative
@@ -121,7 +165,7 @@
     line-height: 0
     text-justify: newspaper
     zoom: 1
-    +media-640
+    +media-910
       text-align: center
     &:after
       width: 100%
@@ -145,10 +189,10 @@
     color: #ffffff
     font-size: 18px
     line-height: normal
-    +media-992
+    +media-910
       display: none
   &__request-items-step-button
-    +media-640
+    +media-910
       position: absolute
       right: 5%
       top: 50%
@@ -178,7 +222,7 @@
     right: 3%
     transform: translateY(-50%)
     z-index: 99
-    +media-930
+    +media-910
       left: 5%
       right: auto
     +media-640

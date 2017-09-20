@@ -19,6 +19,7 @@ class Application{
         this._headerStepsCancel();
         this._dateTimePicker();
         this._selectInit();
+        this._mobileDropDown();
     }
 
     _requestItemsButton(){
@@ -170,6 +171,16 @@ class Application{
                     $('body').removeClass('modal-opened');
                 }
             }
+        });
+    }
+
+    _mobileDropDown(){
+        $('.js-mobile-menu').on('click', function () {
+            let $this = $(this);
+            $this.toggleClass('header-storage__menu-mobile--opened');
+            let $list = $this.siblings('.header-storage__menu-mobile-list');
+            $list.slideToggle();
+            $('body').toggleClass('modal-opened');
         });
     }
 }
