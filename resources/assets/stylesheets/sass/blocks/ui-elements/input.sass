@@ -33,11 +33,13 @@
   box-shadow: inset 0 1px 3px rgba(0,0,0,.3)
 [type="checkbox"]:not(:checked) + label:after,
 [type="checkbox"]:checked + label:after
-  content: '✔'
+  content: ''
   position: absolute
-  top: 8px
-  left: 6px
-  font-size: 18px
+  top: 11px
+  left: 7px
+  width: 11px
+  height: 8px
+  background: url('../images/Check.svg') no-repeat
   color: $color-base
   transition: all .2s
 [type="checkbox"]:not(:checked) + label:after
